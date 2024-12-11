@@ -1,0 +1,86 @@
+:root {
+    --background-color: #ffffff;
+    --background-color-section: #6EE0B6;
+    --color-navigation-text: #000000;
+    --background-color-footer: #000000;
+    --color-footer-text: #ffffff;
+    --color-buttons: #6EE0B6;
+    --color-form-buttons: #000000;
+    --color-button-text: #000000;
+    --color-form-text: #ffffff;
+    --color-cards: #89cff0;
+    --color_brown: #603808;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-box-shadow: #00000040;
+    --color-hero: #ffffff;
+}
+
+.navigation{
+    background-color: transparent;
+    position: absolute;
+}
+
+.hero_container{
+    grid-template-rows: 155px auto;
+}
+
+.hero_section{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(./01-css-images/human-naute-clean-beach.jpg);
+    background-position: center top;
+    opacity: 85%;
+    margin-bottom: 100px;
+}
+
+.menu-container ul li a{
+    color: var(--color-white);
+}
+
+.know_us_better img{
+    grid-row: 1 /  span 2;
+}
+
+@media (width < 1300px) {
+
+    .hero_section{
+        height: 550px;
+    }
+}
+
+@media (width < 768px) {
+
+    .headline_h2_mobile{
+        grid-row: 1;
+    }
+
+    .know_us_better img{
+        grid-row: 3 /  span 2;
+    }
+}
+
+@media (width > 767px) {
+
+    .swap img{
+        grid-column: 1 / span 6;
+    }
+
+    .swap h2{
+        grid-column: 8 / span 5;
+    }
+
+    .swap p{
+        grid-column: 8 / span 5;
+    }
+}
+
+@media (width < 680px) {
+
+    .navigation{
+        background-color: var(--background-color);
+        position: fixed;
+    }
+
+    .menu-container ul li a{
+    color:var(--color-navigation-text);
+    }
+}

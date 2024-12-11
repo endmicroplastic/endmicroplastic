@@ -1,0 +1,157 @@
+:root {
+    --background-color: #ffffff;
+    --background-color-section: #6EE0B6;
+    --color-navigation-text: #000000;
+    --background-color-footer: #000000;
+    --color-footer-text: #ffffff;
+    --color-buttons: #6EE0B6;
+    --color-form-buttons: #000000;
+    --color-button-text: #000000;
+    --color-form-text: #ffffff;
+    --color-cards: #89cff0;
+    --color_brown: #603808;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-box-shadow: #00000040;
+    --color-hero: #ffffff;
+}
+
+.navigation{
+    position: absolute;
+}
+
+.blogs{
+    margin-top: 160px;
+}
+
+.blog_article_pages_headline{
+    color: var(--color-navigation-text);
+    grid-column: span 12;
+    border-bottom: 1px solid var(--color-navigation-text);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.blog_article_tag{
+    grid-column: 3 / span 8;
+    color: var(--color-cards);
+    font-family: "Geologica", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.blog_article_title{
+    color: var(--color-navigation-text);
+    grid-column: 3 / span 8;
+    border-bottom: 1px solid var(--color-navigation-text);
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+}
+
+.blogs a{
+    text-decoration: none;
+}
+
+.gap{
+    height: 40px;
+}
+
+.blog_content_block_template img{
+    width: 100%;
+    min-height: 280px;
+    grid-column: 1 / span 4;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+}
+
+.blogs_right_block{
+    grid-column: 5 / span 8;
+    padding: 30px;
+}
+
+.blogs_right_tags,
+.block_right_author_date{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.tags{
+    color: var(--background-color-section);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-right: 15px;
+}
+
+.blog_title,
+.description{
+    color: var(--color-black);
+    margin-bottom: 15px;
+}
+
+.author{
+    color: var(--color-cards);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15.08px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-right: 15px;
+    margin-bottom: 10px
+}
+
+.article_template{
+    grid-column: 3 / span 8;
+}
+
+.article_template h4{
+    margin-bottom: 20px;
+    font-family: "Geologica", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.article_template img{
+    width: 100%;
+}
+
+.image_description{
+    margin: 5px 0px 20px 0px;
+    font-family: "Geologica", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-align: right;
+}
+
+.article_template p:last-child{
+    margin-bottom: 100px;
+}
+
+@media (width < 768px) {
+    
+    .blog_content_block_template img,
+    .blogs_right_block{
+        grid-column: 1 / span 12;
+    }
+
+    .blog_article_tag,
+    .blog_article_title,
+    .article_template{
+        grid-column: span 12;
+    }
+
+    .blogs{
+        margin-top: 130px;
+    }
+}
