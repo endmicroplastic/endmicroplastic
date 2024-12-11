@@ -102,7 +102,7 @@
             <h2 class="headline_h2 headline_h2_cards">News and Latest Articles</h2>
             <div class="aritcles_template">
                 <a href="./blogs/403-pieces-of-plastic-were-found-inside-this-birds-stomach.html">
-                    <img src="./11resources/02-images/plastic-polution-in-body-of-bird.jpg" alt="Hundreds of plastic fragments and debris found in the stomach of a seabird, highlighting the devastating impact of plastic pollution on marine wildlife.">
+                    <img src="./11resources/02-images/plastic-polution-in-body-of-bird.jpg" loading="lazy" alt="Hundreds of plastic fragments and debris found in the stomach of a seabird, highlighting the devastating impact of plastic pollution on marine wildlife.">
                     <h3 class="article_headline">403 pieces of plastic were found inside this bird’s stomach</h3>
                     <p class="date">November 25, 2024</p>
                     <p class="article_description">World leaders are meeting for the final round of negotiations on the Global...</p>
@@ -110,7 +110,7 @@
             </div>
             <div class="aritcles_template">
                 <a href="./blogs/new-report-into-woodsides-troubling-history-of-environmental.html">
-                    <img src="./11resources/02-images/save-our-planet-pacific-ocean.jpeg" alt="Sea turtle swimming in polluted ocean water, highlighting the environmental impact discussed in a new report about Woodside's troubling environmental history, released on November 19, 2024, by Australia Pacific.">
+                    <img src="./11resources/02-images/save-our-planet-pacific-ocean.jpeg" loading="lazy" alt="Sea turtle swimming in polluted ocean water, highlighting the environmental impact discussed in a new report about Woodside's troubling environmental history, released on November 19, 2024, by Australia Pacific.">
                     <h3 class="article_headline">New report into Woodside’s troubling history of environmental</h3>
                     <p class="date">November 19, 2024</p>
                     <p class="article_description">Australia Pacific has today released a report outlining the potentially...</p>
@@ -118,7 +118,7 @@
             </div>
             <div class="aritcles_template">
                 <a href="./blogs/learn-why-we-need-to-take-action-now.html">
-                    <img src="./11resources/02-images/poluted-by-single-use-plastic-in-ocean.jpeg" alt="Heavily polluted beach covered in plastic waste with activists holding a banner reading 'Polluted by Single-Use Plastic,' emphasizing the environmental crisis caused by plastic pollution in oceans.">
+                    <img src="./11resources/02-images/poluted-by-single-use-plastic-in-ocean.jpeg" loading="lazy" alt="Heavily polluted beach covered in plastic waste with activists holding a banner reading 'Polluted by Single-Use Plastic,' emphasizing the environmental crisis caused by plastic pollution in oceans.">
                     <h3 class="article_headline">Learn why we need to take action now!</h3>
                     <p class="date">November 14, 2024</p>
                     <p class="article_description">Microplastics, tiny plastic particles smaller than 5mm, have infiltrated...</p>
@@ -126,7 +126,7 @@
             </div>
             <div class="aritcles_template">
                 <a href="./blogs/plastic-pollution-has-flooded-our-planet-harming-peoples-health.html">
-                    <img src="./11resources/02-images/single-use-plastic-polution-ocean-and-beach.jpeg" alt="Polluted beach covered in plastic waste, symbolizing the devastating impact of throwaway plastic on oceans, wildlife, and human health, as highlighted in a report released on November 12, 2024.">
+                    <img src="./11resources/02-images/single-use-plastic-polution-ocean-and-beach.jpeg" loading="lazy" alt="Polluted beach covered in plastic waste, symbolizing the devastating impact of throwaway plastic on oceans, wildlife, and human health, as highlighted in a report released on November 12, 2024.">
                     <h3 class="article_headline">Plastic pollution has flooded our planet, harming people’s health</h3>
                     <p class="date">November 12, 2024</p>
                     <p class="article_description">Throwaway plastic pollutes our oceans, harms wildlife, and affects our health...</p>
@@ -199,5 +199,17 @@
             </div>
         </footer>
     </div>
+    <script defer>
+        if (window.location.pathname.endsWith('.html')) {
+            const newUrl = window.location.pathname.slice(0, -5);
+            history.pushState(null, '', newUrl);
+        }
+    </script>
+    <script defer>
+        if (window.location.pathname.endsWith('.html')) {
+            let cleanUrl = window.location.pathname.replace('.html', '');
+            window.location.replace(cleanUrl);
+        }
+    </script>
 </body>
 </html>
