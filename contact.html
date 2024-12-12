@@ -64,28 +64,51 @@
 
         <section class="cards_container grid-wrapper">
             <div class="cards_template">
-                <span class="iconify seach-icon card_icon" data-icon="mingcute:group-3-fill"></span>
+                <span class="iconify card_icon" data-icon="mingcute:group-3-fill"></span>
                 <h3>Our support team</h3>
                 <p>Contact our support team for quick assistance</p>
             </div>
             <div class="cards_template">
-                <span class="iconify seach-icon card_icon" data-icon="ic:outline-search"></span>
+                <span class="iconify card_icon" data-icon="ic:outline-search"></span>
                 <h3>ask us your question</h3>
                 <p>Don’t wait! Get immediate help with our 24/7 support team</p>
             </div>
             <div class="span_six">
-                <form class="join_us_container contact_form">
+                <form class="join_us_container contact_form" id="contact-form">
                     <h2 class="contact_form_headline">Contact form</h2>
-                    <input type="text" placeholder="First Name*" class="form_input_half">
-                    <input type="text" placeholder="Last Name*" class="form_input_half">
-                    <input type="email" placeholder="Email*" class="form_input">
-                    <textarea placeholder="Message*" class="form_input form_input_message" rows="8"></textarea>
-                    <div class="agree_to_terms">
-                        <input type="checkbox" id="terms">
-                        <label for="terms">I agree to the terms, conditions and privacy policy</label>
+                    <input type="text" name="firstName" placeholder="First Name*" class="form_input_half" required>
+                    <input type="text" name="lastName" placeholder="Last Name*" class="form_input_half" required>
+                    <input type="email" name="email" placeholder="Email*" class="form_input" required>
+                    <textarea placeholder="Message*" name="message" class="form_input form_input_message" rows="8" required></textarea>
+                    <div class="agree_to_terms_contact">
+                        <input type="checkbox" name="agreed" id="terms_contact" required>
+                        <label for="terms_contact">I agree to the terms, conditions and privacy policy</label>
                     </div>
                     <button type="submit" class="form-button contact_form_button">Send</button>
                 </form>
+                <script>
+                    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+                      e.preventDefault();
+                      const data = Object.fromEntries(new FormData(e.target).entries());
+                  
+                      try {
+                        await fetch('https://script.google.com/macros/s/AKfycbynNu8LgI9fliQUoW-pUuKWH6ALidkkeyqeZjppo7ZYmWCD3apm6IlbSXeEevsx-M7-TQ/exec', {
+                          method: 'POST',
+                          body: JSON.stringify(data),
+                          headers: { 'Content-Type': 'application/json' },
+                          mode: 'no-cors'
+                        });
+                  
+                        alert("Thank you for contacting us, message successfully submitted!");
+                        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                        document.getElementById('contact-form').reset();
+                        
+                      } catch (error) {
+                        console.error("Error in fetch:", error);
+                        alert("Error submitting form!");
+                      }
+                    });
+                  </script>
             </div>
         </section>
 
@@ -132,23 +155,46 @@
                     <p class="article_description">Throwaway plastic pollutes our oceans, harms wildlife, and affects our health...</p>
                 </a>
             </div>
-            <button>See more</button>
+            <button onclick="window.location.href='blogs.html';">See more</button>
         </section>
 
         <section class="join_us">
             <div class="join_us_container grid-wrapper">
                 <h2 class="headline_h2 headline_h2_mobile_join_us">Join us!</h2>
-                <p>Together we are part of a growing, global movement determined to bring about the changes our planet desperately needs. <br><b>Sign up to receive updates on our campaigns.</b></p>
-                <form>
-                    <input type="text" placeholder="First Name*" class="form_input_half">
-                    <input type="text" placeholder="Last Name*" class="form_input_half">
-                    <input type="email" placeholder="Email*" class="form_input">
+                <p>Together we are part of a growing, global movement determined to bring about the changes our planet desperately needs.<br><b>Sign up to receive updates on our campaigns.</b></p>
+                <form id="google-form">
+                    <input type="text" name="firstName" placeholder="First Name*" class="form_input_half" required>
+                    <input type="text" name="lastName" placeholder="Last Name*" class="form_input_half" required>
+                    <input type="email" name="email" placeholder="Email*" class="form_input" required>
                     <div class="agree_to_terms">
-                        <input type="checkbox" id="terms">
+                        <input type="checkbox" name="agreed" id="terms" required> 
                         <label for="terms">I agree to the terms, conditions and privacy policy</label>
                     </div>
                     <button type="submit" class="form-button">Join Now</button>
                 </form>
+                <script>
+                    document.getElementById('google-form').addEventListener('submit', async function(e) {
+                      e.preventDefault();
+                      const data = Object.fromEntries(new FormData(e.target).entries());
+                  
+                      try {
+                        await fetch('https://script.google.com/macros/s/AKfycbyElGK2GqYJkqD8UqABDnBcz2jXKyU6SRp9ewqwxOk7pyGKiFHvenedJ_VJoafSPZl40g/exec', {
+                          method: 'POST',
+                          body: JSON.stringify(data),
+                          headers: { 'Content-Type': 'application/json' },
+                          mode: 'no-cors'
+                        });
+                  
+                        alert("Form successfully submitted!");
+                        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                        document.getElementById('google-form').reset();
+                        
+                      } catch (error) {
+                        console.error("Error in fetch:", error);
+                        alert("Error submitting form!");
+                      }
+                    });
+                  </script>
             </div>
         </section>
 
@@ -156,28 +202,32 @@
             <div class="footer_wrapper">
                 <section class="footer_section grid-wrapper">
                     <div class="footer_left">
-                        <h5>EndPlastic</h5>
+                        <h5>EndMicroplastic</h5>
                         <div class="footer_left_soc">
-                            <p>EndPlastic promote eco-friendly alternatives, innovation, and community action to eliminate single-use plastics.</p>
+                            <p>EndMicroplastic raises awareness about microplastic and plastic pollution while supporting petitions for change.</p>
                             <div class="footer_left_icons">
-                                <span class="iconify seach-icon footer_icon" data-icon="mdi:instagram"></span>
-                                <span class="iconify seach-icon footer_icon" data-icon="mdi:facebook"></span>
+                                <a href="index.html">
+                                    <span class="iconify footer_icon" data-icon="mdi:instagram"></span>
+                                </a>
+                                <a href="index.html">
+                                    <span class="iconify footer_icon" data-icon="mdi:facebook"></span>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div class="footer_middle">
                         <h5>Contact information</h5>
                         <div class="footer_contact_info_line">
-                            <span class="iconify seach-icon footer_icon" data-icon="ic:baseline-phone"></span>
-                            <p>+45 12 36 78 90</p>
+                            <span class="iconify footer_icon footer_icon_mid" data-icon="ic:baseline-phone"></span>
+                            <p>+45 91 77 89 16</p>
                         </div>
                         <div class="footer_contact_info_line">
-                            <span class="iconify seach-icon footer_icon" data-icon="ic:outline-email"></span>
-                            <p>info@endplastic.com</p>
+                            <span class="iconify footer_icon footer_icon_mid" data-icon="ic:outline-email"></span>
+                            <p>endmplst@gmail.com</p>
                         </div>
                         <div class="footer_contact_info_line">
-                            <span class="iconify seach-icon footer_icon" data-icon="rivet-icons:map-pin"></span>
-                            <p>Petržalka :D</p>
+                            <span class="iconify footer_icon footer_icon_mid" data-icon="rivet-icons:map-pin"></span>
+                            <p>Esbjerg, Denmark</p>
                         </div>
                     </div>
                     <div class="footer_right">

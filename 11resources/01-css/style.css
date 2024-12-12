@@ -350,6 +350,7 @@ body{
 }
 
 .news_articles_container button{
+    color: var(--color-button-text);
     background-color: var(--color-buttons);
     border: none;
     cursor: pointer;
@@ -364,6 +365,7 @@ body{
     justify-content: center;
     transition: all 0.5s ease;
     transform: scale(1);
+    text-decoration: none;
 }
 
 .news_articles_container button:hover{
@@ -507,6 +509,9 @@ body{
 
 .footer_icon{
     font-size: 40px;
+}
+
+.footer_icon_mid{
     margin-right: 10px;
 }
 
@@ -522,6 +527,14 @@ body{
 
 .footer_left{
     grid-column: 1 / span 4;
+}
+
+.footer_left_icons a{
+    margin-right: 10px;
+    width: 100%;
+    height: 100%;
+    color: transparent;
+    text-decoration: none;
 }
 
 .footer_middle{
@@ -814,6 +827,10 @@ body{
 
 @media (width < 430px) {
     
+    .agree_to_terms input[type="checkbox"]{
+        width: 18px;
+    }
+
     .footer_contact_info_line svg{
         display: none;
     }
